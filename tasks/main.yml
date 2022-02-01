@@ -1,0 +1,12 @@
+---
+# OpenWRT_dropbear_authorizedkeys/tasks/main.yml
+
+- name: 'Put the public key into /etc/dropbear/authorized_keys'
+  template:
+    src: 'authorized_keys.j2'
+    dest: '/etc/dropbear/authorized_keys'
+    owner: 'root'
+    group: 'root'
+    mode: '0600'
+  notify:
+    - 'restart dropbear service'
