@@ -11,7 +11,7 @@ None.
 Role Variables
 --------------
 
-None.
+- `ssh_pub_key_location`: Path to the public key file to be used, defaults to `$HOME/.ssh/.ssh/id_rsa.pub` on the Ansible controller machine
 
 Dependencies
 ------------
