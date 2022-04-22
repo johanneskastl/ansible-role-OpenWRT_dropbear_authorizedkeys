@@ -1,5 +1,6 @@
 galaxy_info:
   role_name: 'OpenWRT_dropbear_authorizedkeys'
+  namespace: 'johanneskastl'
   author: 'Johannes Kastl'
   description: 'Put a public SSH key into /etc/dropbear/authorized_keys on a OpenWrt machine'
   company: 'B1 Systems GmbH'
