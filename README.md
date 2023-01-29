@@ -25,6 +25,8 @@ In case there are multiple keys you want to add, use `multiple_ssh_pub_key_locat
 
 Please note that this variable does not have a default value.
 
+**Attention**: While specifying paths, please use `~/.ssh/...` and not `$HOME/.ssh/...`, as this does not work.
+
 Dependencies
 ------------
 
