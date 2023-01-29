@@ -1,7 +1,7 @@
 ---
 # OpenWRT_dropbear_authorizedkeys/handlers/main.yml
 
-- name: 'restart dropbear service'
+- name: 'Restart dropbear service'
   ansible.builtin.service:
     name: 'dropbear'
     state: 'restarted'
