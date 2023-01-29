@@ -1,3 +1,5 @@
+![Ansible Lint](https://github.com/johanneskastl/ansible-role-OpenWRT_dropbear_authorizedkeys/workflows/Ansible%20Lint/badge.svg)
+
 OpenWRT_dropbear_authorizedkeys
 =========
 
