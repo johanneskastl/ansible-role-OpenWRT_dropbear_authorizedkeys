@@ -32,12 +32,31 @@ Dependencies
 
 None
 
-Example Playbook
+Example Playbook using default pubkey `id_rsa.pub`
 ----------------
 
     - hosts: servers
       roles:
-        - { role: 'johanneskastl.OpenWRT_dropbear_authorizedkeys' }
+        - role: 'johanneskastl.OpenWRT_dropbear_authorizedkeys'
+
+Example Playbook using a different public key file
+----------------
+
+    - hosts: servers
+      roles:
+        - role: 'johanneskastl.OpenWRT_dropbear_authorizedkeys'
+          ssh_pub_key_location: '~/.ssh/id_ed25519.pub'
+
+Example Playbook using multiple public key files
+----------------
+
+    - hosts: servers
+      roles:
+        - role: 'johanneskastl.OpenWRT_dropbear_authorizedkeys'
+          multiple_ssh_pub_key_locations:
+            - '~/.ssh/id_rsa.pub'
+            - '~/.ssh/id_ecdsa.pub'
+            - '~/.ssh/id_ed25519.pub'
 
 License
 -------
