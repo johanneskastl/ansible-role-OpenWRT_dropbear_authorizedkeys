@@ -17,7 +17,7 @@ You have two options:
 
 In case you only need one key added to the `authorized_keys` file, use `ssh_pub_key_location`.
 
-- `ssh_pub_key_location`: Path to the public key file to be used, defaults to `$HOME/.ssh/.ssh/id_rsa.pub` on the Ansible controller machine
+- `ssh_pub_key_location`: Path to the public key file to be used, defaults to `$HOME/.ssh/id_rsa.pub` on the Ansible controller machine
 
 In case there are multiple keys you want to add, use `multiple_ssh_pub_key_locations`:
 
