@@ -11,7 +11,17 @@ None.
 Role Variables
 --------------
 
+You have two options:
+
+In case you only need one key added to the `authorized_keys` file, use `ssh_pub_key_location`.
+
 - `ssh_pub_key_location`: Path to the public key file to be used, defaults to `$HOME/.ssh/.ssh/id_rsa.pub` on the Ansible controller machine
+
+In case there are multiple keys you want to add, use `multiple_ssh_pub_key_locations`:
+
+- `multiple_ssh_pub_key_locations`: list of strings, where each contains the path to a SSH publich key file.
+
+Please note that this variable does not have a default value.
 
 Dependencies
 ------------
