@@ -1,4 +1,4 @@
 ---
 # OpenWRT_dropbear_authorizedkeys/defaults/main.yml
 
-ssh_pub_key_location: "{{ lookup('env','HOME') }}/.ssh/id_rsa.pub"
+ssh_pub_key_location: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa.pub"
