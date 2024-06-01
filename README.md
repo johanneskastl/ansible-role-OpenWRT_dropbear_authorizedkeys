@@ -13,7 +13,7 @@ None.
 Role Variables
 --------------
 
-You have two options:
+You have ~~two~~ three options:
 
 In case you only need one key added to the `authorized_keys` file, use
 `ssh_pub_key_location`.
@@ -21,15 +21,22 @@ In case you only need one key added to the `authorized_keys` file, use
 - `ssh_pub_key_location`: Path to the public key file to be used, defaults to
   `~/.ssh/id_rsa.pub` on the Ansible controller machine
 
-In case there are multiple keys you want to add, use `multiple_ssh_pub_key_locations`:
+In case there are multiple keys you want to add **from files**, use
+`multiple_ssh_pub_key_locations`:
 
 - `multiple_ssh_pub_key_locations`: list of strings, where each contains the
-  path to a SSH publich key file.
+  path to a SSH public key file.
 
 Please note that this variable does not have a default value.
 
 **Attention**: While specifying paths, please use `~/.ssh/...` and not
 `$HOME/.ssh/...`, as this does not work.
+
+In case you want to add multiple keys by adding their **content**, not their
+paths, use the `multiple_ssh_pub_key_lines` variable:
+
+- `multiple_ssh_pub_key_lines`: list of strings, where each contains the
+   content of a SSH public key file.
 
 Dependencies
 ------------
@@ -66,6 +73,18 @@ Example Playbook using multiple public key files
         - '~/.ssh/id_rsa.pub'
         - '~/.ssh/id_ecdsa.pub'
         - '~/.ssh/id_ed25519.pub'
+```
+
+Example Playbook using multiple public keys as content
+----------------
+
+```yaml
+- hosts: servers
+  roles:
+    - role: 'johanneskastl.OpenWRT_dropbear_authorizedkeys'
+      multiple_ssh_pub_key_llines:
+        - 'ecdsa-sha2-nistp521 AAAAE2V...'
+        - 'ssh-ed25519 AAAA...'
 ```
 
 License
