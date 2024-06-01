@@ -1,10 +1,17 @@
 #
 # {{ ansible_managed }}
 #
-{% if multiple_ssh_pub_key_locations is defined  %}
+{% if multiple_ssh_pub_key_locations is defined or multiple_ssh_pub_key_lines is defined %}
+{% if multiple_ssh_pub_key_locations is defined %}
 {% for key in multiple_ssh_pub_key_locations %}
 {{ lookup('file', key) }}
 {% endfor %}
+{% endif %}
+{% if multiple_ssh_pub_key_lines is defined %}
+{% for key in multiple_ssh_pub_key_lines %}
+{{ key }}
+{% endfor %}
+{% endif %}
 {% else %}
 {{ lookup('file', ssh_pub_key_location) }}
 {% endif %}
