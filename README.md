@@ -38,6 +38,13 @@ paths, use the `multiple_ssh_pub_key_lines` variable:
 - `multiple_ssh_pub_key_lines`: list of strings, where each contains the
    content of a SSH public key file.
 
+Please note that this variable does not have a default value.
+
+Please also note that setting either `multiple_ssh_pub_key_locations` or
+`multiple_ssh_pub_key_lines` disables using `ssh_pub_key_location`, while it is
+possible to use both file paths and public key content in parallel (for whatever
+reason...).
+
 Dependencies
 ------------
 
